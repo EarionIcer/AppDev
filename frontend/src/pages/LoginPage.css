@@ -1,0 +1,130 @@
+/* Full page layout */
+.login-wrapper {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+}
+
+/* Inner container */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 64px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* LEFT SIDE */
+.left-side {
+  text-align: center;
+}
+
+/* circle logo wrapper */
+.logo-circle {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: 6px solid #b70824;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  margin: 0 auto;
+  overflow: hidden; /* ensures image stays round */
+}
+
+.logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.left-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #b70824;
+  margin-top: 24px;
+}
+
+.left-subtitle {
+  margin-top: 16px;
+  color: #666;
+  max-width: 350px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* RIGHT SIDE CARD */
+.login-card {
+  width: 380px;
+  padding: 40px;
+  background: #d05a6e !important;
+  color: white !important;
+  border-radius: 16px !important;
+}
+
+/* text fields */
+.textfield-custom {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  margin-bottom: 24px;
+}
+
+/* slightly closer spacing for password input */
+.textfield-password {
+  margin-bottom: 16px;
+}
+
+/* remember + forgot */
+.options-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -4px;
+  margin-bottom: 16px;
+}
+
+.remember-label {
+  color: white;
+}
+
+.forgot-text {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* login button */
+.login-btn {
+  background: #a0001c !important;
+  padding: 12px !important;
+  font-weight: 700 !important;
+}
+
+.login-btn:hover {
+  background: #8b0018 !important;
+}
+
+.divider {
+  margin: 24px 0 !important;
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.create-row {
+  text-align: center;
+}
+
+.create-account {
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.create-account:hover {
+  text-decoration: underline;
+}
+
