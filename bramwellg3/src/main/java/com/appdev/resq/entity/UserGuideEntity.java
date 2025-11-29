@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,12 +21,15 @@ import lombok.NoArgsConstructor;
 public class UserGuideEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long guideID;
+    private Long userGuideID;
 
-    private Long userID;
-    private String guide_name;
-    private String steps;
-    private Long hotlineID;
-    private String category;
-    private String description;
+    private String favorite;
+
+    @ManyToOne
+    @JoinColumn(name = "userID")
+    private UserEntity user;
+
+    @ManyToOne
+    @JoinColumn(name = "guideID")
+    private GuideEntity guide;
 }

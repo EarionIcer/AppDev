@@ -47,7 +47,7 @@ public class UserGuideController {
         if (!userGuideService.getUserGuideById(id).isPresent()) {
             return ResponseEntity.notFound().build();
         }
-        userGuide.setGuideID(id);
+        userGuide.setUserGuideID(id);
         return ResponseEntity.ok(userGuideService.saveUserGuide(userGuide));
     }
 
