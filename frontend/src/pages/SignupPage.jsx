@@ -11,6 +11,8 @@ import {
 } from "@mui/material";
 import { Visibility, VisibilityOff } from "@mui/icons-material";
 import "./SignupPage.css";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
   const [formData, setFormData] = useState({
@@ -28,16 +30,45 @@ export default function SignUp() {
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-  };
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  if (formData.password !== formData.confirmPassword) {
+    alert("Passwords do not match");
+    return;
+  }
+
+  try {
+    const response = await axios.post("http://localhost:8080/api/users", {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      dob: formData.dob,
+      email: formData.email,
+      address: formData.address,
+      bloodType: formData.bloodType,
+      allergies: formData.allergies,
+      username: formData.username,
+      password: formData.password
+    });
+
+    console.log("User created:", response.data);
+
+    alert("Account created successfully!");
+    navigate("/"); // redirect to Login page
+
+  } catch (error) {
+    console.error(error);
+    alert("Registration failed");
+  }
+};
+
 
   return (
     <Box className="signup-wrapper">
@@ -169,8 +200,16 @@ export default function SignUp() {
           </Button>
         </form>
         <Typography className="signin-text">
-          Already have an account? <span className="signin-link">Sign In</span>
+          Already have an account?{" "}
+          <span
+            className="signin-link"
+            onClick={() => navigate("/")}
+            style={{ cursor: "pointer" }}
+          >
+            Sign In
+          </span>
         </Typography>
+
       </Paper>
     </Box>
   );

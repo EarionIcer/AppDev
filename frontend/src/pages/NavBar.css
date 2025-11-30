@@ -1,0 +1,76 @@
+/* Entire navbar */
+.navbar {
+  background-color: white !important;
+  color: black;
+  border-bottom: 1px solid #eee;
+  padding: 8px 0;
+  box-shadow: none !important;
+}
+
+/* Toolbar layout */
+.navbar-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* Logo section */
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.navbar-logo img {
+  width: 35px;
+  height: 35px;
+}
+
+.navbar-title {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Nav links */
+.navbar-links {
+  display: flex;
+  gap: 12px;
+  margin-left: 20px;
+}
+
+.nav-btn {
+  text-transform: none !important;
+  color: black !important;
+}
+
+.nav-btn.active {
+  background-color: #d05a6e !important;
+  color: white !important;
+}
+
+.nav-btn.active:hover {
+  background-color: #c14c61 !important;
+}
+
+/* Search field */
+.navbar-search {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.search-field {
+  width: 350px;
+}
+
+.search-field .MuiOutlinedInput-root {
+  border-radius: 10px !important;
+  background-color: #fafafa;
+}
+
+/* Profile icon */
+.navbar-avatar {
+  background-color: #d05a6e !important;
+  width: 36px !important;
+  height: 36px !important;
+}
